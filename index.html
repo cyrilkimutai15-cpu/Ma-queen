@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10051F">
+  <meta name="description" content="A little digital love letter for My Queen.">
+  <title>For My Queen 💜</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true" id="sky"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <audio id="backgroundMusic" src="assets/watangoja.mp3" preload="auto" loop></audio>
+
+  <main>
+    <section class="screen welcome active" id="welcome" aria-labelledby="welcome-title">
+      <div class="orb orb-one"></div><div class="orb orb-two"></div>
+      <div class="eyebrow"><span class="sparkle">✦</span> A LITTLE SOMETHING FOR YOU <span class="sparkle">✦</span></div>
+      <h1 id="welcome-title">Hey, <em>My Queen…</em> <span>💜</span></h1>
+      <p class="intro">I made something little for you. It’s not much, but every little part of it comes from my heart.</p>
+      <button class="primary-btn" id="openSurprise">Open your surprise <span>✧</span></button>
+      <p class="tiny-note">made with a little courage & a lot of care</p>
+      <div class="scroll-hint">A little journey awaits <span>↓</span></div>
+    </section>
+
+    <section class="screen message-screen" id="message" aria-labelledby="message-title">
+      <div class="section-kicker">01 — A LITTLE MESSAGE</div>
+      <div class="glass-panel message-panel">
+        <span class="quote-mark">“</span>
+        <h2 id="message-title">Some people make ordinary days feel extraordinary.</h2>
+        <p>Sometimes, you meet someone and slowly realise that their presence makes ordinary moments feel a little more special. I don’t know how you do it, but you have a way of making me smile without even trying.</p>
+        <div class="signature">— someone who thinks you’re pretty special</div>
+      </div>
+      <button class="primary-btn next-btn" data-next="gallery">There’s more for you… <span>♡</span></button>
+    </section>
+
+    <section class="screen gallery-screen" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-kicker">02 — LITTLE MOMENTS, BIG MEMORIES</div>
+      <h2 class="section-title" id="gallery-title">A gallery of <em>you & me</em></h2>
+      <p class="section-subtitle">Eight little reminders that some moments deserve to be kept.</p>
+      <div class="photo-grid" id="photoGrid">
+        <button class="photo-card tilt-left" data-photo="0" aria-label="Open photograph 1"><span class="photo-wrap"><img src="assets/photo1.jpg" alt="A playful outdoor selfie together" loading="lazy"></span><span class="photo-caption">One of my favourite views.</span></button>
+        <button class="photo-card tilt-right" data-photo="1" aria-label="Open photograph 2"><span class="photo-wrap"><img src="assets/photo2.jpg" alt="A happy moment together" loading="lazy"></span><span class="photo-caption">Just us being us.</span></button>
+        <button class="photo-card tilt-left" data-photo="2" aria-label="Open photograph 3"><span class="photo-wrap"><img src="assets/photo3.jpg" alt="A fun selfie together" loading="lazy"></span><span class="photo-caption">A little chaos, a lot of joy.</span></button>
+        <button class="photo-card tilt-right" data-photo="3" aria-label="Open photograph 4"><span class="photo-wrap"><img src="assets/photo4.jpg" alt="A sweet moment together" loading="lazy"></span><span class="photo-caption">Moments I wish I could pause.</span></button>
+        <button class="photo-card tilt-right" data-photo="4" aria-label="Open photograph 5"><span class="photo-wrap"><img src="assets/photo5.jpg" alt="A smiling selfie together" loading="lazy"></span><span class="photo-caption">A memory worth keeping.</span></button>
+        <button class="photo-card tilt-left" data-photo="5" aria-label="Open photograph 6"><span class="photo-wrap"><img src="assets/photo6.jpg" alt="A cheerful moment together" loading="lazy"></span><span class="photo-caption">Some memories just feel different.</span></button>
+        <button class="photo-card tilt-right" data-photo="6" aria-label="Open photograph 7"><span class="photo-wrap"><img src="assets/photo7.jpg" alt="My Queen smiling in her black shirt" loading="lazy"></span><span class="photo-caption">Your smile deserves its own gallery.</span></button>
+        <button class="photo-card tilt-left" data-photo="7" aria-label="Open photograph 8"><span class="photo-wrap"><img src="assets/photo8.jpg" alt="My Queen making a playful face" loading="lazy"></span><span class="photo-caption">Look at that beautiful smile.</span></button>
+      </div>
+      <button class="primary-btn next-btn" data-next="notes">Keep going, My Queen <span>♡</span></button>
+    </section>
+
+    <section class="screen notes-screen" id="notes" aria-labelledby="notes-title">
+      <div class="section-kicker">03 — OPEN WHENEVER YOU LIKE</div>
+      <h2 class="section-title" id="notes-title">A few little <em>love notes</em></h2>
+      <p class="section-subtitle">Tap an envelope. I tucked a thought inside each one.</p>
+      <div class="envelope-grid">
+        <button class="envelope" data-note="You’re genuinely one of my favourite people." aria-expanded="false"><span class="env-icon">✉</span><span>For you</span><small>tap to open</small></button>
+        <button class="envelope" data-note="Your smile has a way of making my day better." aria-expanded="false"><span class="env-icon">✉</span><span>A little reminder</span><small>tap to open</small></button>
+        <button class="envelope" data-note="I hope you never forget how special you are." aria-expanded="false"><span class="env-icon">✉</span><span>On the days you forget</span><small>tap to open</small></button>
+        <button class="envelope" data-note="If I could keep one moment on repeat, I’d choose one with you." aria-expanded="false"><span class="env-icon">✉</span><span>A favourite thought</span><small>tap to open</small></button>
+        <button class="envelope" data-note="You’re beautiful, and I hope you know that." aria-expanded="false"><span class="env-icon">✉</span><span>Just because</span><small>tap to open</small></button>
+      </div>
+      <div class="note-reveal" id="noteReveal" aria-live="polite">Choose an envelope to discover a note ✨</div>
+      <button class="primary-btn next-btn" data-next="surprise">There’s one more thing… <span>♡</span></button>
+    </section>
+
+    <section class="screen surprise-screen" id="surprise" aria-labelledby="surprise-title">
+      <div class="section-kicker">04 — THE LITTLE SURPRISE</div>
+      <h2 class="section-title" id="surprise-title">One tiny thing before you go…</h2>
+      <p class="section-subtitle">Tap the heart. It has something to tell you.</p>
+      <button class="big-heart" id="bigHeart" aria-label="Tap the glowing heart">♥</button>
+      <p class="heart-message" id="heartMessage" aria-live="polite">A little tap, please? 💜</p>
+      <button class="primary-btn hidden" id="readyButton">Are you ready? <span>❤️</span></button>
+    </section>
+
+    <section class="screen final-screen" id="final" aria-labelledby="final-title">
+      <div class="final-stars" aria-hidden="true"></div>
+      <div class="section-kicker">JUST FOR YOU</div>
+      <p class="final-opening">I don’t know what the future holds, but I know that I’m happy our paths crossed.</p>
+      <p class="final-bright">You make my world a little brighter, <em>My Queen.</em></p>
+      <div class="final-pause" id="finalPause">There’s something I want you to know…</div>
+      <div class="confession" id="confession">
+        <h1 id="final-title">I LOVE YOU</h1>
+        <h2>MY QUEEN. <span>👑💜</span></h2>
+      </div>
+      <p class="final-signoff" id="finalSignoff">Just wanted you to know. ❤️</p>
+      <button class="text-btn" id="replayButton">Experience it again ↺</button>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photograph viewer">
+    <button class="close-lightbox" id="closeLightbox" aria-label="Close photograph">×</button>
+    <button class="lightbox-arrow prev" id="prevPhoto" aria-label="Previous photograph">‹</button>
+    <figure><img id="lightboxImage" src="" alt=""><figcaption id="lightboxCaption"></figcaption></figure>
+    <button class="lightbox-arrow next" id="nextPhoto" aria-label="Next photograph">›</button>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
