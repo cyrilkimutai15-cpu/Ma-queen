@@ -90,3 +90,54 @@ h1 em,h2 em,.section-title em{font-family:"Great Vibes",cursive;color:var(--lave
 @media(max-width:760px){.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:520px}.photo-card{padding:7px 7px 11px}.photo-caption{font-size:1.08rem}.envelope-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:500px}.screen{padding-left:18px;padding-right:18px}}
 @media(max-width:390px){.photo-grid{gap:12px}.envelope{min-height:122px}.section-kicker{font-size:.59rem;letter-spacing:.18em}.lightbox{padding-left:44px;padding-right:44px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* BEAUTIFUL LOVE NOTE POPUP */
+.letter-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: rgba(8, 3, 18, 0.88);
+  backdrop-filter: blur(12px);
+}
+
+.letter-popup[hidden] {
+  display: none !important;
+}
+
+.letter-paper {
+  width: min(100%, 420px);
+  padding: 42px 28px;
+  border-radius: 14px;
+  text-align: center;
+  color: #35194d;
+  background: linear-gradient(145deg, #fff5ff, #e8d9ff);
+  box-shadow: 0 0 55px #a855f788;
+  animation: screenIn .5s ease both;
+}
+
+.letter-paper h3 {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: #7540a0;
+}
+
+.letter-paper p {
+  font-size: 21px;
+  line-height: 1.7;
+}
+
+.letter-close {
+  margin-top: 22px;
+  padding: 11px 25px;
+  border: 1px solid #8f5bb0;
+  border-radius: 30px;
+  background: transparent;
+  color: #542c70;
+  cursor: pointer;
+}
+
