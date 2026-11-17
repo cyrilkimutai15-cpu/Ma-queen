@@ -104,57 +104,50 @@
   });
 
   // Tapping an envelope opens its note in the shared letter area.
-  $$(".envelope").forEach(envelope => {
-    envelope.addEventListener("click", () => {
-      $$(".envelope").forEach(item => {
-        item.classList.remove("opened");
-        item.setAttribute("aria-expanded", "false");
-      });
-      envelope.classList.add("opened");
-      envelope.setAttribute("aria-expanded", "true");
-      $("#noteReveal").textContent = envelope.dataset.note;
-      burst(7);
-    });
-  });
+  // Create the love note popup
+const letterPopup = document.createElement("div");
+letterPopup.className = "letter-popup";
+letterPopup.hidden = true;
 
-  let heartOpened = false;
-  $("#bigHeart").addEventListener("click", () => {
-    if (heartOpened) return;
-    heartOpened = true;
-    $("#heartMessage").textContent = "There’s something I’ve been wanting to tell you…";
-    $("#bigHeart").classList.add("opened");
-    burst(34);
-    $("#readyButton").classList.remove("hidden");
-  });
-  $("#readyButton").addEventListener("click", () => showScreen("final"));
+letterPopup.innerHTML = `
+  <div class="letter-paper" role="dialog" aria-modal="true">
+    <h3>For My Queen 💜</h3>
+    <p id="letterMessage"></p>
+    <button class="letter-close" type="button">Close note</button>
+  </div>
+`;
 
-  let revealTimers = [];
-  function startFinalReveal() {
-    revealTimers.forEach(clearTimeout);
-    revealTimers = [];
-    const confession = $("#confession");
-    const pause = $("#finalPause");
-    const signoff = $("#finalSignoff");
-    confession.classList.remove("show");
-    signoff.classList.remove("show");
-    pause.textContent = "There’s something I want you to know…";
-    revealTimers.push(setTimeout(() => {
-      pause.textContent = "";
-      confession.classList.add("show");
-      burst(42);
-    }, 2600));
-    revealTimers.push(setTimeout(() => signoff.classList.add("show"), 5000));
-  }
-  $("#replayButton").addEventListener("click", () => {
-    heartOpened = false;
-    $("#heartMessage").textContent = "A little tap, please? 💜";
-    $("#readyButton").classList.add("hidden");
-    $("#bigHeart").classList.remove("opened");
+document.body.appendChild(letterPopup);
+
+const letterMessage = $("#letterMessage", letterPopup);
+
+function closeLetter() {
+  letterPopup.hidden = true;
+}
+
+$(".letter-close", letterPopup).addEventListener("click", closeLetter);
+
+letterPopup.addEventListener("click", event => {
+  if (event.target === letterPopup) closeLetter();
+});
+
+// Tapping an envelope opens its note
+$$(".envelope").forEach(envelope => {
+  envelope.addEventListener("click", () => {
     $$(".envelope").forEach(item => {
       item.classList.remove("opened");
       item.setAttribute("aria-expanded", "false");
     });
-    $("#noteReveal").textContent = "Choose an envelope to discover a note ✨";
-    showScreen("welcome");
+
+    envelope.classList.add("opened");
+    envelope.setAttribute("aria-expanded", "true");
+
+    const note = envelope.dataset.note;
+
+    $("#noteReveal").textContent = note;
+    letterMessage.textContent = note;
+    letterPopup.hidden = false;
+
+    burst(7);
   });
-})();
+});
